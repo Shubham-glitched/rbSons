@@ -1,0 +1,86 @@
+<!-- Product Detail Modal -->
+<div class="modal-overlay" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>{{product?.name}}</h2>
+      <button class="close-btn" (click)="closeModal()">×</button>
+    </div>
+    
+    <div class="modal-body" *ngIf="product">
+      <div class="product-detail-grid">
+        <div class="product-image-section">
+          <div class="main-image">
+            <img [src]="product.image" [alt]="product.name" />
+          </div>
+        </div>
+        
+        <div class="product-info-section">
+          <div class="product-header">
+            <h3>{{product.name}}</h3>
+            <div class="category-badge">
+              {{getCategoryName(product.category)}}
+            </div>
+          </div>
+          
+          <div class="product-description">
+            <p>{{product.longDescription}}</p>
+          </div>
+          
+          <div class="product-features">
+            <h4>Key Features</h4>
+            <div class="features-grid">
+              <span *ngFor="let feature of product.features" class="feature-tag">
+                {{feature}}
+              </span>
+            </div>
+          </div>
+          
+          <div class="product-specifications">
+            <h4>Specifications</h4>
+            <div class="specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Material:</span>
+                <span class="spec-value">{{product.specifications.material}}</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Finish:</span>
+                <span class="spec-value">{{product.specifications.finish}}</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Dimensions:</span>
+                <span class="spec-value">{{product.specifications.dimensions}}</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Warranty:</span>
+                <span class="spec-value">{{product.specifications.warranty}}</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Installation:</span>
+                <span class="spec-value">{{product.specifications.installation}}</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="product-actions">
+            <div class="stock-status">
+              <span class="status-badge" [class.in-stock]="product.inStock" [class.out-of-stock]="!product.inStock">
+                {{product.inStock ? 'In Stock' : 'Out of Stock'}}
+              </span>
+            </div>
+            
+            <div class="action-buttons">
+              <button class="btn btn-primary" (click)="inquireAboutProduct()">
+                <span>📞</span>
+                Inquire Now
+              </button>
+              <button class="btn btn-secondary" (click)="openWhatsApp()">
+                <span>💬</span>
+                WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

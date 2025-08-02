@@ -1,0 +1,134 @@
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Premium Bathroom Accessories</h1>
+      <p>Transform your bathroom into a luxurious sanctuary with our premium collection of modern accessories and fixtures.</p>
+      <div class="hero-buttons">
+        <a routerLink="/products" class="btn btn-primary">Explore Products</a>
+        <a href="#contact" class="btn btn-secondary" (click)="scrollToContact()">Get Quote</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="rbsons/2024-11-11 at 3.10.38 PM.jpeg" alt="Luxury Bathroom" />
+    </div>
+  </div>
+</section>
+
+<!-- Categories Section -->
+<section id="categories" class="categories">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Product Categories</h2>
+      <p>Discover our comprehensive range of bathroom accessories organized by category</p>
+    </div>
+    
+    <div class="categories-grid">
+      <div class="category-card" *ngFor="let category of categories" (click)="navigateToCategory(category.id)">
+        <div class="category-image">
+          <img [src]="category.image" [alt]="category.name" />
+          <div class="category-overlay">
+            <span class="product-count">{{category.productCount}} Products</span>
+          </div>
+        </div>
+        <div class="category-info">
+          <h3>{{category.name}}</h3>
+          <p>{{category.description}}</p>
+          <div class="category-action">
+            <span class="view-products">View Products →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="view-all-section">
+      <a routerLink="/products" class="btn btn-primary">View All Products</a>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>About RB Sons</h2>
+        <p>With years of experience in the bathroom accessories industry, we pride ourselves on offering the finest quality products that combine functionality with contemporary design.</p>
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">🏆</div>
+            <h3>Premium Quality</h3>
+            <p>All our products meet international quality standards</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🚚</div>
+            <h3>Fast Delivery</h3>
+            <p>Quick and reliable delivery across the country</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🛠️</div>
+            <h3>Installation Support</h3>
+            <p>Professional installation services available</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-image">
+        <img src="rbsons/IMG-20220505-WA0102.jpg" alt="About RB Sons" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<!-- <section id="contact" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2>Get In Touch</h2>
+      <p>Ready to transform your bathroom? Contact us today!</p>
+    </div>
+    
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h3>Phone</h3>
+            <p>+91 98765 43210</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <h3>Email</h3>
+            <p>info@rbsons.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h3>Address</h3>
+            <p>123 Bathroom Street, Accessory City, AC 12345</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <form>
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Your Phone" required>
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section> -->
